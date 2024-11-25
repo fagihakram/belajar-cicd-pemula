@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <title>Portfolio | Ludiflex</title>
+
+    <!-- --------- Tambahan CSS untuk Projects ---------- -->
+    <style>
+        /* Ambient Blue Theme - Lebih Cerah */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Kontainer Proyek */
+        #projects {
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Header Bagian */
+        #projects .top-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #projects h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideDown 1s ease-out;
+        }
+
+        #projects p {
+            font-size: 1.2em;
+            color: #f0f8ff;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        /* Konten Proyek */
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-item h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .project-item p {
+            color: #f0f8ff;
+        }
+
+        /* Konten CI/CD */
+        .ci-cd-content {
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .ci-cd-content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .ci-cd-content p {
+            margin-bottom: 15px;
+            color: #f0f8ff;
+            line-height: 1.6;
+        }
+
+        .ci-cd-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #f0f8ff;
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+            <p class="nav-name">My Portfolio</p>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="#home" class="nav-link active-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#about" class="nav-link">About</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+
+    <main class="wrapper">
+       <!-- -------------- FEATURED BOX ---------------- -->
+       <section class="featured-box" id="home">
+          <div class="featured-text">
+            <div class="featured-text-card">
+                <span>Fagih Akram</span>
+            </div>
+            <div class="featured-name">
+                <p>I'm <span class="typedText"></span></p>
+            </div>
+            <div class="featured-text-info">
+                <p>Experienced frontend developer with a passion for creating visually stunning
+                   and user-friendly websites.
+                </p>
+            </div>
+          </div>
+          <div class="featured-image">
+            <div class="image">
+                <img src="assets/images/profil.png" alt="avatar">
+            </div>
+          </div>
+          <div class="scroll-icon-box">
+            <a href="#projects" class="scroll-btn">
+                <i class="uil uil-mouse-alt"></i>
+                <p>Scroll Down</p>
+            </a>
+          </div>
+
+       </section>
+       
+       <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+          <div class="top-header">
+            <h1>About Me</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="about-info">
+                    <h3>My introduction</h3>
+                    <p>I am well-versed in HTML, CSS and JavaScript , and other cutting edge
+                       frameworks and libraries, which allows me to implement interactive features.
+                    </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Tailwind</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>PHP</span>
+                        <span>JAVA</span>
+                        <span>Python</span>
+                        <span>C</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- PROJECTS BOX ---------------- -->
+       <section class="section" id="projects">
+          <div class="top-header">
+            <h1>Projects & CI/CD Pipeline</h1>
+            <p>Explore some of my projects and learn about the CI/CD pipelines I have implemented.</p>
+          </div>
+          <div class="project-list">
+              <!-- Proyek 1 -->
+              <div class="project-item">
+                  <h3>Belajar CI/CD Pemula</h3>
+                  <p>Membangun pipeline CI/CD yang efisien dan otomatis untuk proyek pengembangan perangkat lunak menggunakan GitHub dan Docker.</p>
+              </div>
+              <!-- Proyek 2 -->
+              <div class="project-item">
+                  <h3>Website Portfolio</h3>
+                  <p>Membuat website portfolio interaktif dengan menggunakan HTML, CSS, dan JavaScript untuk menampilkan proyek dan keahlian saya.</p>
+              </div>
+              <!-- Tambahkan proyek lainnya sesuai kebutuhan -->
+          </div>
+
+          <!-- Konten CI/CD -->
+          <div class="ci-cd-content">
+              <h2>CI/CD Pipeline</h2>
+              <p>
+                  <strong>Continuous Integration (CI)</strong> adalah pengintegrasian kode ke dalam repositori kode kemudian menjalankan pengujian secara otomatis, cepat, dan sering. Kamu dapat melakukan CI ini dengan menggunakan perintah commit.
+              </p>
+              <p>
+                  Sementara <strong>Continuous Delivery</strong> atau <strong>Continuous Deployment (CD)</strong> adalah praktik yang dilakukan setelah proses CI selesai dan seluruh kode berhasil terintegrasi, sehingga aplikasi bisa dibangun lalu dirilis secara otomatis. CI/CD pipeline ini sangat lazim digunakan dalam pengembangan perangkat lunak. CI/CD pipeline ini menjadi penghubung antara tim pengembang dengan tim operasional yang di dalamnya terdapat tiga fase yang berupa continuous integration, continuous delivery, dan continuous deployment. Ketiga fase tersebut akan dilakukan secara terus menerus dan otomatis untuk mendapatkan perangkat lunak yang andal dan bebas dari bug.
+              </p>
+              <p>
+                  <em>Referensi:</em> <a href="https://dicoding.com/blog/apa-itu-ci-cd/" style="color: #66a6ff; text-decoration: underline;">Dicoding.com/blog/apa-itu-ci-cd/</a>
+              </p>
+              <h3>Created by:</h3>
+              <p>Akhyar, Muhammad Ichsan, Muhammad Ghufran</p>
+
+              <h3>Praktikum 4 POPL</h3>
+              <p>Pada praktikum kali ini kita akan mempraktekan CI/CD Pipeline dengan GitHub dan Docker.</p>
+              <p>Beberapa hal yang perlu dipersiapkan terlebih dahulu yaitu:</p>
+              <ul>
+                  <li>Registrasi akun DockerHub: <a href="https://hub.docker.com/" style="color: #66a6ff; text-decoration: underline;" target="_blank">https://hub.docker.com/</a></li>
+                  <li>Install Docker Desktop</li>
+              </ul>
+              <p>Ikuti langkah-langkah dibawah:</p>
+              <ol>
+                  <li>Fork repository <a href="https://github.com/Maulyanda/belajar-cicd-pemula" style="color: #66a6ff; text-decoration: underline;" target="_blank">Github.com/Maulyanda/belajar-cicd-pemula</a></li>
+                  <li>Pada repository pribadi hapus directory “.github/workflows”</li>
+                  <li>Buka halaman actions pada GitHub</li>
+                  <li>Pilih Go lalu Configure</li>
+                  <li>Commit dengan membuat branch baru</li>
+                  <li>Create Pull Request lalu Merge Pull Request</li>
+                  <li>Jika sudah berhasil maka tampilan akan seperti dibawah</li>
+                  <li>Pergi ke Details untuk melihat hasil build</li>
+                  <li>Kita dapat melihat keseluruhan proses build yang terjadi sehingga mempermudah kita dalam proses debugging</li>
+                  <li>Login ke <a href="https://hub.docker.com/" style="color: #66a6ff; text-decoration: underline;" target="_blank">Docker Hub</a> lalu buat repository baru</li>
+                  <li>Jika repo pada Docker Hub sudah terbuat, selanjutnya adalah membuat personal access token</li>
+                  <li>Pada sisi kanan atas tekan gambar profil lalu pergi ke Account settings</li>
+                  <li>Lalu pilih Personal access tokens</li>
+                  <li>Kemudian generate access token dengan deskripsi “DOCKERHUB_TOKEN” dan access permissions “Read, Write, Delete”</li>
+                  <li>Kembali ke GitHub</li>
+                  <li>Pada repository masing-masing buka settings lalu ke bagian Actions di dalam Secret and variables</li>
+                  <li>Buat 2 secret key dengan menekan “new repository secret”:
+                      <ul>
+                          <li><strong>Name:</strong> DOCKERHUB_USERNAME<br><strong>Secret:</strong> (username pada Docker Hub)</li>
+                          <li><strong>Name:</strong> DOCKERHUB_TOKEN<br><strong>Secret:</strong> (personal access token yang sudah dibuat pada Docker Hub sebelumnya)</li>
+                      </ul>
+                  </li>
+                  <li>Jika sudah berhasil maka tampilan akan seperti ini</li>
+                  <li>Sekarang kita akan mengkoneksikan Docker, buka “go.yml” pada directory “.github/workflows”</li>
+                  <li>Tambahkan code ini ke dalam file “go.yml”</li>
+                  <li>- Ganti “akhyarrrrr/praktikum-popl” dengan nama repository yang telah dibuat pada Docker Hub</li>
+                  <li>- Perhatikan indentasinya karena ini bersifat sensitif</li>
+                  <li>Lalu commit dan push perubahan yang sudah dibuat</li>
+                  <li>Sekarang kita akan menjalankan project kita pada Docker Desktop</li>
+                  <li>Buka Docker Desktop yang sudah terinstal pada laptop masing-masing</li>
+                  <li>Masuk ke bagian Hub di dalam Images kemudian pull</li>
+                  <li>Setelah berhasil pull, maka tampilan pada Local akan seperti ini</li>
+                  <li>Jalankan Docker dengan port 3000</li>
+                  <li>Jika project berjalan dengan lancar maka tampilan pada <a href="http://localhost:3000" style="color: #66a6ff; text-decoration: underline;" target="_blank">http://localhost:3000</a> akan seperti ini.</li>
+              </ol>
+              <p>
+                  <em>Referensi:</em><br>
+                  <a href="https://youtu.be/v-pqoP6ro-8?si=GLGrXsU_BJiaXocK" style="color: #66a6ff; text-decoration: underline;" target="_blank">Part 1</a><br>
+                  <a href="https://youtu.be/YjpoNvYt8Iw?si=Vkakbc8-qOyAm9G6" style="color: #66a6ff; text-decoration: underline;" target="_blank">Part 2</a>
+              </p>
+          </div>
+       </section>
+
+       <!-- -------------- CONTACT BOX ---------------- -->
+
+       <section class="section" id="contact">
+          <div class="top-header">
+            <h1>Get in touch</h1>
+            <span>Do you have a project in your mind? Contact me here</span>
+          </div>
+          <div class="row">
+             <div class="col">
+                <div class="contact-info">
+                    <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                    <p><i class="uil uil-envelope"></i> Email: <a href="mailto:fagihakram@gmail.com" style="color: #66a6ff; text-decoration: underline;">fagihakram@gmail.com</a></p>
+                    <p><i class="uil uil-phone"></i> Tel: +62 819 2912 1177</p>
+                </div>
+             </div>
+             <div class="col">
+                <div class="form-control">
+                    <div class="form-inputs">
+                        <input type="text" class="input-field" placeholder="Name">
+                        <input type="email" class="input-field" placeholder="Email">
+                    </div>
+                    <div class="text-area">
+                        <textarea placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-button">
+                        <button class="btn">Send <i class="uil uil-message"></i></button>
+                    </div>
+                </div>
+             </div>
+          </div>
+       </section>
+
+    </main>
+
+
+    <footer>
+        <div class="top-footer">
+            <p>Fagih Akram</p>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon"><a href="https://instagram.com/fagihakram?igshid=MzMyNGUyNmU2YQ==" target="_blank"><i class="uil uil-instagram"></i></a></div>
+            <div class="icon"><a href="https://www.facebook.com/faqih.akram.5?mibextid=gik2fB" target="_blank"><i class="uil uil-facebook"></i></a></div>
+            <div class="icon"><a href="https://github.com/FagihAkram" target="_blank"><i class="uil uil-github-alt"></i></a></div>
+        </div>
+        <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Fagih Akram</a> - All rights reserved</p>
+        </div>
+    </footer>
+
+    </div>
+
+
+
+    <!-- Typing JS link -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <!-- Scroll refeal JS link -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Main JS -->
+    <script src="/assets/scrypt.js"></script>
+
+    <!-- Smooth Scrolling JS (Tambahan) -->
+    <script>
+        // Smooth Scrolling untuk Tombol "Scroll Down" dan "Lihat Proyek"
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contoh Penggunaan Typed.js untuk animasi teks
+        const typed = new Typed('.typedText', {
+            strings: ['a Frontend Developer', 'a CI/CD Enthusiast', 'a Lifelong Learner'],
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 2000,
+            loop: true
+        });
+
+        // Fungsi Menu Responsif
+        function myMenuFunction() {
+            const navMenu = document.getElementById('myNavMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Scroll Reveal Animations (Opsional)
+        ScrollReveal().reveal('.featured-box, .section', {
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            origin: 'bottom',
+            reset: true
+        });
+    </script>
+</body>
+</html>
